@@ -20,7 +20,9 @@ function Authenticate() {
 	const deployedCallBackURI = "ttp://externaltools.zuri.chat/authenticate/";
 
 	const vercelCallbackURI =
-		"https://zc-plugin-tools-oz8hq3z3r-preshy-jones.vercel.app/";
+		"https://zc-plugin-tools-oz8hq3z3r-preshy-jones.vercel.app/authenticate/";
+	const herokuCallbackURI =
+		"https://zurichatappfigma.herokuapp.com/authenticate/";
 	const clientSecret = "V3CDaxZOdHJqFedUFdaR3JbFUS1Abd";
 	//const proxy = "https://secret-ocean-49799.herokuapp.com/";
 
@@ -30,7 +32,7 @@ function Authenticate() {
 		//setTimeout(async () => {
 		const result = await axios({
 			method: "POST",
-			url: `https://www.figma.com/api/oauth/token?client_id=${clientId}&client_secret=${clientSecret}&redirect_uri=${localHostCallBackURI}&code=${code}&grant_type=authorization_code`,
+			url: `https://www.figma.com/api/oauth/token?client_id=${clientId}&client_secret=${clientSecret}&redirect_uri=${herokuCallbackURI}&code=${code}&grant_type=authorization_code`,
 		})
 			.then((response) => {
 				console.log(response);
