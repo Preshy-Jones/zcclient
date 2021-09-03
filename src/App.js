@@ -22,7 +22,6 @@ function App() {
 						<Route path="/figma/:subroute" component={FigmaSubRoutes} />
 						<Route path="/figma" component={Figma} />
 						<Route path="/github" component={Github} />
-						<Route path="/figma/authenticate" component={Authenticate} />
 						<Route path="/giphy" component={Giphy} />
 						<Route path="/googledrive" component={GoogleDrive} />
 					</Switch>
