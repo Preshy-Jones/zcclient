@@ -15,21 +15,19 @@ function Authenticate() {
 	const [isLoading, setisLoading] = useState(false);
 	const [accessToken, setAccessToken] = useState("");
 
-	const localHostCallBackURI = "http://localhost:3000/authenticate/";
+	const localHostCallBackURI = "http://localhost:3000/figma/authenticate/";
 
-	const deployedCallBackURI = "ttp://externaltools.zuri.chat/authenticate/";
-
-	const vercelCallbackURI =
-		"https://zc-plugin-tools-oz8hq3z3r-preshy-jones.vercel.app/authenticate/";
+	const deployedCallBackURI =
+		"http://externaltools.zuri.chat/figma/authenticate/";
 	const herokuCallbackURI =
-		"https://zurichatappfigma.herokuapp.com/authenticate/";
+		"https://zurichatappfigma.herokuapp.com/figma/authenticate/";
+
 	const clientSecret = "V3CDaxZOdHJqFedUFdaR3JbFUS1Abd";
-	//const proxy = "https://secret-ocean-49799.herokuapp.com/";
 
 	const fetchAccesskey = async (e) => {
 		e.preventDefault();
 		setisLoading(true);
-		//setTimeout(async () => {
+
 		const result = await axios({
 			method: "POST",
 			url: `https://www.figma.com/api/oauth/token?client_id=${clientId}&client_secret=${clientSecret}&redirect_uri=${herokuCallbackURI}&code=${code}&grant_type=authorization_code`,
@@ -43,8 +41,6 @@ function Authenticate() {
 			.catch((error) => {
 				console.log(error.response);
 			});
-		//	}, 2000);
-		// return setState("holla");
 	};
 	return (
 		<div>
